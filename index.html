@@ -30,11 +30,16 @@ html {
 body {
     font-size: 1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    max-width: 1200px;
     background-color: #f1f1f1;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
     color: #333;
     min-height: 100vh;
-    position: relative;
+}
+
+h1, h2, h3 , h4 {
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 a {
@@ -47,15 +52,96 @@ a {
     top: 0;
     left: 0;
     width: 250px;
-    color: #333;
     background-color: #fff;
-    min-height: 100vh;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid #e5e5e5;
+     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    font-family: "Roboto", sans-serif;
+    z-index: 2;
 }
 
-main {
-    margin-left: 250px;
-    padding: 1.5rem 1rem;
+.sidebar::-webkit-scrollbar {
+    width: 6px;
 }
+
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.sidebar-links a {
+    font-family: "Roboto", sans-serif;
+    color: #424242;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 8px 16px;
+    justify-content: space-between;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-links a:hover {
+    background-color: #d3d3d3;
+    color: #000;
+}
+
+#demoAcc {
+    display: none;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+#demoAcc a {
+    font-size: 0.95rem;
+    padding: 8px 20px;
+    color: #555;
+}
+
+#demoAcc a.active {
+    background-color: #f1f1f1;
+}
+
+#demoAcc a:hover {
+    background-color: #e5e5e5;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+.sidebar-footer a {
+    display: block;
+    padding: 8px 16px;
+    color: #616161;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.sidebar-footer a:hover {
+    background-color: lightgray;
+    color: #000;
+}
+
+header {
+    display: none;
+}
+
 
 .navbar-brand {
     height: 150px;
@@ -78,6 +164,86 @@ padding: 8px 12px;
     background-color: lightgray;
 }
 
+main {
+    margin-left: 250px;
+    padding: 2rem;
+    max-width: 1200px;
+}
+
+
+@media only screen and (max-width:768px) {
+
+    .sidebar {
+    display: none;
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 250px;
+    background: #fff;
+    z-index: 2;
+}
+
+header {
+    display: block;
+     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    font-family: "Roboto", sans-serif;
+}
+
+.navbar-brand .btn-close {
+    display: block;
+}
+
+header .brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+header .brand:hover {
+    background-color: #000;
+}
+
+/* Toggle Button */
+header .btn-toggler {
+    font-size: 1.3rem;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+}
+
+header .btn-toggler:hover {
+    background-color: #000;
+    color: #fff;
+}
+ 
+.sidebar {
+        display: none;
+    }
+    
+    main {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+}
 
 
 </style>
@@ -91,14 +257,14 @@ padding: 8px 12px;
     <span class="btn-close"><i class="fa fa-remove"></i></span>
     <h2>Modren Rivet</h2>
   </div>
-  <div>
+  <div class="sidebar-links">
     <a href="#">Shirts</a>
     <a href="#">Dresses</a>
     <a href="#" id="myBtn">
       Jeans <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAcc">
-      <a href="#"><i class="fa fa-caret-right"></i>Skinny</a>
+      <a href="#" class="active"><i class="fa fa-caret-right"></i> Skinny</a>
       <a href="#">Relaxed</a>
       <a href="#">Bootcut</a>
       <a href="#">Straight</a>
@@ -108,36 +274,36 @@ padding: 8px 12px;
     <a href="#">Blazers</a>
     <a href="#">Shoes</a>
   </div>
+  <div class="sidebar-footer">
   <a href="#footer">Contact</a>
   <a href="#">Newsletter</a>
   <a href="#footer">Subscribe</a>
+  </div>
 </nav>
 
 <!-- mobile navbar -->
 <header>
-  <div>LOGO</div>
-  <a href="#"><i class="fa fa-bars"></i></a>
+  <div class="brand">Modren Rivet</div>
+  <a href="#" class="btn-toggler"><i class="fa fa-bars"></i></a>
 </header>
 
 <div id="myOverlay"></div>
 
 <main>
 
-  <div style="margin-top:83px"></div>
-
-  <header>
-    <p>Jeans</p>
+  <section class="header">
+    <h2>Jeans</h2>
     <p>
       <i class="fa fa-shopping-cart"></i>
       <i class="fa fa-search"></i>
     </p>
-  </header>
+  </section>
 
   <div>
-    <img src="/w3images/jeans.jpg" alt="Jeans" style="width:100%">
-    <div style="padding:24px 48px">
+    <img src="/w3images/jeans.jpg" alt="Jeans">
+    <div>
       <h1>New arrivals</h1>
-      <h1>COLLECTION 2016</h1>
+      <h2>COLLECTION 2025</h2>
       <p><a href="#jeans">SHOP NOW</a></p>
     </div>
   </div>
