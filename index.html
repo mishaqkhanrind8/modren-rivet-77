@@ -52,90 +52,110 @@ a {
     top: 0;
     left: 0;
     width: 250px;
-    background-color: #fff;
+    background: linear-gradient(180deg, #ffffff, #fafafa);
     height: 100vh;
     overflow-y: auto;
-    border-right: 1px solid #e5e5e5;
-     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    border-right: 1px solid #e6e6e6;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
     font-family: "Roboto", sans-serif;
     z-index: 2;
 }
 
 .sidebar::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
 }
 
 .sidebar::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: transparent;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 3px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .sidebar-links {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem 0;
 }
 
 .sidebar-links a {
-    font-family: "Roboto", sans-serif;
-    color: #424242;
-    font-size: 16px;
-    font-weight: 500;
-    display: block;
-    padding: 8px 16px;
-    justify-content: space-between;
-    transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 20px;
+  font-size: 15.5px;
+  font-weight: 500;
+  color: #2c2c2c;
+  text-decoration: none;
+  transition: all 0.25s ease;
 }
 
 .sidebar-links a:hover {
-    background-color: #d3d3d3;
-    color: #000;
+  background: linear-gradient(90deg, rgba(30, 144, 255, 0.12), transparent);
+  color: #1a73e8;
+  transform: translateX(4px);
+}
+
+/* Active link */
+.sidebar-links a.active {
+  background: linear-gradient(90deg, rgba(30, 144, 255, 0.2), transparent);
+  color: #1a73e8;
+  font-weight: 600;
 }
 
 #demoAcc {
-    display: none;
-    flex-direction: column;
-    padding-left: 20px;
+  display: none;
+  flex-direction: column;
+  padding: 6px 0 6px 22px;
 }
 
 #demoAcc a {
-    font-size: 0.95rem;
-    padding: 8px 20px;
-    color: #555;
+  font-size: 0.92rem;
+  padding: 8px 18px;
+  margin: 2px 12px;
+  border-radius: 8px;
+  color: #555;
+  transition: all 0.2s ease;
 }
 
-#demoAcc a.active {
-    background-color: #f1f1f1;
-}
-
+/* Submenu hover */
 #demoAcc a:hover {
-    background-color: #e5e5e5;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #000;
+}
+
+/* Submenu active */
+#demoAcc a.active {
+  background-color: rgba(30, 144, 255, 0.15);
+  color: #1a73e8;
+  font-weight: 500;
 }
 
 .sidebar-footer {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 0;
-    border-top: 1px solid #e5e5e5;
+  margin-top: auto;
+  padding: 1.2rem 0;
+  border-top: 1px solid #e6e6e6;
 }
 
 .sidebar-footer a {
-    display: block;
-    padding: 8px 16px;
-    color: #616161;
-    font-weight: 500;
-    transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  color: #616161;
+  font-weight: 500;
+  transition: all 0.25s ease;
 }
 
+/* Footer hover */
 .sidebar-footer a:hover {
-    background-color: lightgray;
-    color: #000;
+  background: linear-gradient(90deg, rgba(30, 144, 255, 0.12), transparent);
+  color: #1a73e8;
+  transform: translateX(4px);
 }
 
 header {
@@ -166,8 +186,129 @@ padding: 8px 12px;
 
 main {
     margin-left: 250px;
-    padding: 2rem;
+    padding: 2rem 1rem;
     max-width: 1200px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Title */
+.header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 1.5rem;
+  color: #1f1f1f;
+  letter-spacing: -0.3px;
+}
+
+/* Icon wrapper */
+.header p {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+/* Icons */
+.header p i {
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #444;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* Hover premium effect */
+.header p i:hover {
+  background-color: #1e90ff1f;
+  color: #1e90ff;
+  transform: translateY(-2px);
+}
+
+/* Spacing between icons */
+.header p i.fa-shopping-cart {
+  margin-right: 0.6rem;
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image with cinematic look */
+.hero-section img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 14px;
+  filter: brightness(0.85) contrast(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Soft dark overlay */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  border-radius: 14px;
+}
+
+/* Content positioning */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+  max-width: 520px;
+  z-index: 2;
+}
+
+/* Headings */
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.hero-content h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 1.8rem;
+  color: #e0e0e0;
+}
+
+/* Premium CTA button */
+.hero-content p a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #ff6a00, #007bff);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 999px;
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.35);
+  transition: all 0.35s ease;
+}
+
+/* Hover effect */
+.hero-content p a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(255, 106, 0, 0.45);
+  background: linear-gradient(135deg, #007bff, #ff6a00);
 }
 
 
@@ -244,8 +385,6 @@ header .btn-toggler:hover {
     }
 
 }
-
-
 </style>
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -287,6 +426,7 @@ header .btn-toggler:hover {
   <a href="#" class="btn-toggler"><i class="fa fa-bars"></i></a>
 </header>
 
+<!-- Main Page -->
 <div id="myOverlay"></div>
 
 <main>
@@ -299,68 +439,64 @@ header .btn-toggler:hover {
     </p>
   </section>
 
-  <div>
-    <img src="/w3images/jeans.jpg" alt="Jeans">
-    <div>
+  <div class="hero-section">
+    <img src="images/jeans.webp" width="1200" height="600" alt="Jeans" loading="eager" 
+    decoding="async" fetchpriority="high">
+    <div class="hero-content">
       <h1>New arrivals</h1>
       <h2>COLLECTION 2025</h2>
       <p><a href="#jeans">SHOP NOW</a></p>
     </div>
   </div>
 
-  <div id="jeans">
-    <p>8 items</p>
-  </div>
+<div id="jeans">
+  <p class="section-title">Jeans Collection</p>
+</div>
 
+<div class="collection-grid">
   <div>
-    <div>
-      <div>
-        <img src="/w3images/jeans1.jpg" style="width:100%">
-        <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
-      </div>
-      <div>
-        <img src="/w3images/jeans2.jpg" style="width:100%">
-        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <img src="/w3images/jeans2.jpg" style="width:100%">
-        <span>New</span>
-        <button>Buy now <i class="fa fa-shopping-cart"></i></button>
-        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
-      </div>
-      <div>
-        <img src="/w3images/jeans3.jpg" style="width:100%">
-        <p>Washed Skinny Jeans<br><b>$20.50</b></p>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <img src="/w3images/jeans3.jpg" style="width:100%">
-        <p>Washed Skinny Jeans<br><b>$20.50</b></p>
-      </div>
-      <div>
-        <img src="/w3images/jeans4.jpg" style="width:100%">
-        <span>Sale</span>
-        <button>Buy now <i class="fa fa-shopping-cart"></i></button>
-        <p>Vintage Skinny Jeans<br><b>$14.99</b></p>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <img src="/w3images/jeans4.jpg" style="width:100%">
-        <p>Vintage Skinny Jeans<br><b>$14.99</b></p>
-      </div>
-      <div>
-        <img src="/w3images/jeans1.jpg" style="width:100%">
-        <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
-      </div>
-    </div>
+    <img src="images/jean-1.webp" alt="Ripped Skinny Jeans" loading="lazy" width="240" height="355">
+    <button>Buy now <i class="fa fa-shopping-cart"></i></button>
+    <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
   </div>
+  <div>
+    <img src="images/jean-2.webp" alt="Mega Ripped Jeans" loading="lazy" width="240" height="355">
+    <button>Buy now <i class="fa fa-shopping-cart"></i></button>
+    <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+  </div>
+  <div>
+    <img src="images/jean-3.webp" alt="Mega Ripped Jeans - New" loading="lazy" width="240" height="355">
+    <span>New</span>
+    <button>Buy now <i class="fa fa-shopping-cart"></i></button>
+    <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+  </div>
+  <div>
+    <img src="images/jean-4.webp" alt="Washed Skinny Jeans" loading="lazy" width="240" height="355">
+    <button>Buy now <i class="fa fa-shopping-cart"></i></button>
+    <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+  </div>
+  <div>
+    <img src="images/jean-5.webp" alt="Washed Skinny Jeans" loading="lazy" width="240" height="355">
+    <button>Buy now <i class="fa fa-shopping-cart"></i></button>
+    <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+  </div>
+  <div>
+    <img src="images/jean-6.webp" alt="Vintage Skinny Jeans - Sale" loading="lazy" width="240" height="355">
+    <span>Sale</span>
+    <button>Buy now <i class="fa fa-shopping-cart"></i></button>
+    <p>Vintage Skinny Jeans<br><b>$14.99</b></p>
+  </div>
+  <div>
+    <img src="images/jean-7.webp" alt="Vintage Skinny Jeans" loading="lazy" width="240" height="355">
+    <button>Buy now <i class="fa fa-shopping-cart"></i></button>
+    <p>Vintage Skinny Jeans<br><b>$14.99</b></p>
+  </div>
+  <div>
+    <img src="images/jean-8.webp" alt="Ripped Skinny Jeans" loading="lazy" width="240" height="355">
+    <button>Buy now <i class="fa fa-shopping-cart"></i></button>
+    <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+  </div>
+</div>
 
   <div>
     <h1>Subscribe</h1>
@@ -370,7 +506,7 @@ header .btn-toggler:hover {
   </div>
 
   <footer id="footer">
-    <div>
+    <div class="footer-container">
       <div>
         <h4>Contact</h4>
         <p>Questions? Go ahead.</p>
