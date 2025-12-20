@@ -498,29 +498,29 @@ header .btn-toggler:hover {
   </div>
 </div>
 
-  <div>
-    <h1>Subscribe</h1>
+  <div class="bg-dark">
+    <h2>Subscribe</h2>
     <p>To get special offers and VIP treatment:</p>
     <p><input type="text" placeholder="Enter e-mail" style="width:100%"></p>
-    <button type="button">Subscribe</button>
+    <button type="button" class="btn-submit">Subscribe</button>
   </div>
 
   <footer id="footer">
     <div class="footer-container">
       <div>
-        <h4>Contact</h4>
+        <h2>Contact</h2>
         <p>Questions? Go ahead.</p>
-        <form action="/action_page.php" target="_blank">
+        <form action="" method="post" id="query-form">
           <p><input type="text" placeholder="Name" name="Name" required></p>
           <p><input type="text" placeholder="Email" name="Email" required></p>
           <p><input type="text" placeholder="Subject" name="Subject" required></p>
           <p><input type="text" placeholder="Message" name="Message" required></p>
-          <button type="submit">Send</button>
+          <button type="submit" class="query-submit">Send</button>
         </form>
       </div>
 
       <div>
-        <h4>About</h4>
+        <h2>About</h2>
         <p><a href="#">About us</a></p>
         <p><a href="#">We're hiring</a></p>
         <p><a href="#">Support</a></p>
@@ -533,37 +533,34 @@ header .btn-toggler:hover {
       </div>
 
       <div>
-        <h4>Store</h4>
-        <p><i class="fa fa-map-marker"></i> Company Name</p>
-        <p><i class="fa fa-phone"></i> 0044123123</p>
-        <p><i class="fa fa-envelope"></i> ex@mail.com</p>
-        <h4>We accept</h4>
-        <p><i class="fa fa-cc-amex"></i> Amex</p>
-        <p><i class="fa fa-credit-card"></i> Credit Card</p>
-        <br>
-        <i class="fa fa-facebook-official"></i>
-        <i class="fa fa-instagram"></i>
-        <i class="fa fa-snapchat"></i>
-        <i class="fa fa-pinterest-p"></i>
-        <i class="fa fa-twitter"></i>
-        <i class="fa fa-linkedin"></i>
+       <div class="store-info">
+  <h2>Store</h2>
+
+  <p><i class="fa-solid fa-location-dot"></i> Company Name</p>
+  <p><i class="fa-solid fa-phone"></i> +44 123 123</p>
+  <p><i class="fa-solid fa-envelope"></i> ex@mail.com</p>
+
+  <h3>We Accept</h3>
+  <p><i class="fa-brands fa-cc-amex"></i> Amex</p>
+  <p><i class="fa-solid fa-credit-card"></i> Credit Card</p>
+
+  <div class="social-icons">
+    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+    <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+</div>
+
       </div>
     </div>
   </footer>
 
-  <div id="newsletter">
-  <div>
-    <div>
-      <i class="fa fa-remove"></i>
-      <h2>NEWSLETTER</h2>
-      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
-      <p><input type="text" placeholder="Enter e-mail"></p>
-      <button type="button">Subscribe</button>
-    </div>
+  <div class="copyright-text">
+    <p>Powered by <a href="#">khan-code-88</a></p>
   </div>
-</div>
-
-  <div>Powered by <a href="#">khan-code-88</a></div>
 </main>
 
 
