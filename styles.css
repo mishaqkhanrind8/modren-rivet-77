@@ -83,7 +83,7 @@
   background: linear-gradient(135deg, #ff6a00, #007bff);
   color: #fff;
   border: none;
-  width: 65%;
+  width: 60%;
   border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 400;
@@ -399,4 +399,35 @@
     .collection-grid {
         grid-template-columns: auto;
     }
+
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+    .hero-content h2 {
+      font-size: 1.2rem;
+    }
+
+    .hero-content p a {
+      font-size: 13px;
+      padding: 8px 14px;
+    }
+
+    .hero-section img {
+      height: 300px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+    }
+
+ .collection-grid img {
+  height: 380px;
+ }
+
+/* Show button on hover */
+.collection-grid > div:hover button {
+  opacity: 1;
+  bottom: 180px;
+  width: 40%;
+}
 }
